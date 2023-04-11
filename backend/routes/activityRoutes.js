@@ -1,7 +1,7 @@
 import express from 'express'
 
 const router = express.Router()
-router.post('/post/student', (req, res)=>{
+router.post('/post/active', (req, res)=>{
     let marks= ((req.body.math + req.body.eng + req.body.swa + req.body.phy + req.body.geo)/5) + '%'
     res.send(marks)
 });

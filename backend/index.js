@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import activityRoutes from "./routes/activityRoutes.js";
 import classRoutes from "./routes/classRoutes.js"
 import mongoose from 'mongoose';
+import categoryRoutes from './routes/categoryRoutes.js'
+import studentsRoutes from './routes/studentsRoutes.js'
 
 const app = express();
 const PORT = 5000;
@@ -14,6 +16,8 @@ mongoose.connect(mongoUri)
 
 app.use('/', classRoutes)
 app.use('/', activityRoutes)
+app.use('/category', categoryRoutes)
+app.use('/students', studentsRoutes)
 
 app.listen(PORT, ()=>{
     console.log('Server is listening on PORT:'+PORT)

@@ -25,3 +25,13 @@ on your activity routes, add a post method that will receive the above data from
  enables us to go to previous versions
  it is a backup tool
  we add our code to repositories
+
+ add restaurant mall to github (you'll need to create a new repository)
+
+ Models.
+ -They create tables on our db and enable us to store data on the db
+ -We create models using mongoose 
+
+ -create a model called students
+ -it will have fields name, yob and grade(eg. form 4)
+ -add students routes that will apply crud on this model
