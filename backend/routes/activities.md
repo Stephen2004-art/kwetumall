@@ -35,3 +35,7 @@ on your activity routes, add a post method that will receive the above data from
  -create a model called students
  -it will have fields name, yob and grade(eg. form 4)
  -add students routes that will apply crud on this model
+
+
+ -add a file called adminAuth.js on auth folder in routes
+ -in adminAuth.js implement signin and signup using the adminModel
