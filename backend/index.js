@@ -1,16 +1,19 @@
 import express from 'express';
 import bodyParser from "body-parser";
+import cors from 'cors';
 import activityRoutes from "./routes/activityRoutes.js";
 import classRoutes from "./routes/classRoutes.js"
 import mongoose from 'mongoose';
 import categoryRoutes from './routes/categoryRoutes.js'
 import studentsRoutes from './routes/studentsRoutes.js'
+import productRoutes from './routes/productRoutes.js'
 import userAuth from './routes/auth/userAuth.js'
 import adminAuth from './routes/auth/adminAuth.js'
 
 const app = express();
 const PORT = 5000;
-app.use(bodyParser())
+app.use(cors())
+app.use(bodyParser.json())
 const mongoUri = 'mongodb+srv://muthuostephen04:sB4hooivaifcGEwe@kwetumalldb.kowvzti.mongodb.net/?retryWrites=true&w=majority'
 mongoose.connect(mongoUri)
     .then(()=>console.log('MongoDb is connected'))
@@ -20,6 +23,7 @@ app.use('/', classRoutes)
 app.use('/', activityRoutes)
 app.use('/category', categoryRoutes)
 app.use('/students', studentsRoutes)
+app.use('/products', productRoutes)
 app.use('/', userAuth)
 app.use('/admin', adminAuth)
 
