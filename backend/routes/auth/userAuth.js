@@ -32,7 +32,8 @@ router.post('/signin', async (req, res)=> {
 })
 
 router.post('/signup', (req, res)=>{
-    // console.log(req.body)
+    console.log('getting here')
+    console.log(req.body)
     bcrypt.hash(req.body.password, saltRound, async (err, hash)=> {
         if(err){
             res.send(err)
