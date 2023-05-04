@@ -39,17 +39,17 @@ const Login = () => {
                 <Form noValidate validated={validated} onSubmit={loginUser}>
                     <Form.Group className="mb-3">
                         <Form.Label>E-mail</Form.Label>
-                        <Form.Control type="email" placeholder="Email Address" onChange={(e)=> {setFormData({...formData, email: e.target.value})}} required/>
+                        <Form.Control type="email" placeholder="Email Address" value={formData.email} onChange={(e)=> {setFormData({...formData, email: e.target.value})}} required/>
                         <Form.Control.Feedback type="invalid">
                             Please insert your E-mail.
                         </Form.Control.Feedback>
                     </Form.Group>
                     <Form.Group className="mb-3">
                         <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" onChange={(e)=> {setFormData({...formData, password: e.target.value})}} required/>
+                        <Form.Control type="password" placeholder="Password" value={formData.password} onChange={(e)=> {setFormData({...formData, password: e.target.value})}} required/>
                         <Form.Control.Feedback type="invalid">
                             Please insert your password.
-                        </Form.Control.Feedback>
+                        </Form.Control.Feedback> 
                     </Form.Group>
                     <p>? Forgot Password</p>
                     {errorMsg? <p style={{color: 'red', fontSize: '0.8em'}}>{errorMsg}</p>: null}
@@ -67,7 +67,7 @@ const Login = () => {
 
 const stylees = {
 //     divv: {
-//         backgroundImage: ('Desktop - 3.png')
+//         
 //     },
     page: {
         border: '1px solid gray',
@@ -78,7 +78,8 @@ const stylees = {
     box: {
         display: 'flex',
         justifyContent: 'center',
-        alignContent: 'center'
+        alignContent: 'center',
+        // backgroundImage: url('Desktop - 3.png')
     },
     wel: {
         display: 'flex',
